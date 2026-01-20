@@ -59,7 +59,7 @@ public class ActivityService {
     }
 
     public void delete(int id) {
-        // must exist
+      
         getById(id);
         activityRepository.delete(id);
     }

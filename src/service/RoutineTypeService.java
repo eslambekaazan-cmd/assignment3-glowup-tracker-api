@@ -71,7 +71,7 @@ public class RoutineTypeService {
 
 
     public void delete(int id) {
-        // check exists
+        
         getById(id);
 
         repository.delete(id);
