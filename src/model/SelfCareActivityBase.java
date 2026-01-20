@@ -5,8 +5,7 @@ import interfaces.Validatable;
 
 public abstract class SelfCareActivityBase extends BaseEntity implements Validatable {
     protected Routine routine;
-    protected String kind; // "BEAUTY" or "WELLNESS"
-
+    protected String kind; 
     public SelfCareActivityBase(int id, String name, Routine routine, String kind) {
         super(id, name);
         setRoutine(routine);
