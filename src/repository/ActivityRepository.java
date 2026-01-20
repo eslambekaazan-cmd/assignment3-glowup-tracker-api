@@ -24,7 +24,7 @@ public class ActivityRepository {
             ps.setString(2, activity.getKind());
             ps.setInt(3, activity.getRoutine().getId());
 
-            // заполняем поля в зависимости от типа
+           
             if (activity instanceof WellnessActivity w) {
                 ps.setInt(4, w.getMinutes());
                 ps.setString(5, w.getIntensity());
@@ -36,7 +36,7 @@ public class ActivityRepository {
                 ps.setString(6, b.getProduct());
                 ps.setInt(7, b.getStepCount());
             } else {
-                // на всякий случай
+                
                 ps.setNull(4, Types.INTEGER);
                 ps.setNull(5, Types.VARCHAR);
                 ps.setNull(6, Types.VARCHAR);
@@ -203,7 +203,7 @@ public class ActivityRepository {
             int minutes = rs.getInt("minutes");
             String intensity = rs.getString("intensity");
             return new WellnessActivity(rs.getInt("aid"), rs.getString("aname"), routine, minutes, intensity);
-        } else { // BEAUTY по умолчанию
+        } else { 
             String product = rs.getString("product");
             int stepCount = rs.getInt("step_count");
             return new BeautyCareActivity(rs.getInt("aid"), rs.getString("aname"), routine, product, stepCount);
